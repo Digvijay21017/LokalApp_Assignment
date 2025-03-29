@@ -25,3 +25,4 @@ export const BookmarkProvider = ({ children }) => {
 
 // Custom Hook to use the context
 export const useBookmarks = () => useContext(BookmarkContext);
+

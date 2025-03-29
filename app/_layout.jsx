@@ -26,7 +26,7 @@ export default function RootLayout() {
             headerRight: () => (
               <Image 
                 source={require("../assets/images/icon.png")} 
-                style={{ width: 30, height: 30, marginRight: 15, backgroundColor: white }} 
+                style={{ width: 30, height: 30, marginRight: 15, backgroundColor: "white" }} 
               />
             ), 
           }}

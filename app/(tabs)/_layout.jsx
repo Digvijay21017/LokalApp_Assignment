@@ -33,6 +33,12 @@ export default function TabLayout() {
             color: "#FFD700", 
           },
           headerTitleAlign: "center",
+          headerRight: () => (
+            <Image 
+              source={require("../../assets/images/icon.png")} 
+              style={{ width: 30, height: 30, marginRight: 15 }} 
+            />
+          ),
           tabBarIcon: ({ color, focused }) => (
             <Ionicons
               name={focused ? "home-sharp" : "home-outline"}
