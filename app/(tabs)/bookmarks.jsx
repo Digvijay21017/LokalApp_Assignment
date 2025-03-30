@@ -1,33 +1,33 @@
 import React from "react";
-import { View, FlatList, StyleSheet, Text } from "react-native";
-import JobCard from "../../components/JobCard";
+import { View, FlatList, Text, StyleSheet } from "react-native";
 import { useBookmarks } from "../../context/BookmarkContext";
+import JobCard from "../../components/JobCard";
 
-export default function Bookmarks() {
+const BookmarkedScreen = () => {
   const { bookmarkedJobs } = useBookmarks();
+
+  if (bookmarkedJobs.length === 0) {
+    return (
+      <View style={styles.container}>
+        <Text style={{ padding: 20, color: "#fff" }}>
+          No bookmarked jobs yet.
+        </Text>
+      </View>
+    );
+  }
 
   return (
     <View style={styles.container}>
-      {bookmarkedJobs.length === 0 ? (
-        <Text style={styles.emptyText}>No bookmarks yet.</Text>
-      ) : (
-        <FlatList
-          data={bookmarkedJobs}
-          keyExtractor={(item, index) => index.toString()}
-          renderItem={({ item }) => (
-            <JobCard
-              title={item.title}
-              location={item.location}
-              salary={item.salary}
-              phone={item.phone}
-              job={item}
-            />
-          )}
-        />
-      )}
+      <FlatList
+        data={bookmarkedJobs}
+        keyExtractor={(item) => item.title}
+        renderItem={({ item }) => <JobCard {...item} job={item} />}
+      />
     </View>
   );
-}
+};
+
+export default BookmarkedScreen;
 
 const styles = StyleSheet.create({
   container: {

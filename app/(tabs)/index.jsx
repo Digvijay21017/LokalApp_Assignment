@@ -43,7 +43,7 @@ export default function Index() {
   const filterJobs = () => {
     setLoading(true);
     console.log(jobs);
-    // console.log(query);
+    console.log(query);
     // console.log(jobs[0]?.title.toLowerCase());
     // let temp = jobs.filter((job) => 'title' in job? job?.title.toLowerCase().includes(query):false);
 
@@ -73,7 +73,7 @@ export default function Index() {
 
   // if (filteredJobs.length != 0) {
   //   return (
-  //     <View>
+  //     <View styles={styles.container}>
   //       <FlatList
   //         data={filteredJobs}
   //         keyExtractor={(item, index) => index.toString()}
@@ -93,7 +93,7 @@ export default function Index() {
 
   return (
     <View style={styles.container}>
-      <View style={{}}>
+      {/* <View style={{}}>
       <TextInput
         placeholder="Search jobs..."
         value={query}
@@ -101,7 +101,7 @@ export default function Index() {
         style={{ flex:1, backgroundColor:"white" }}
       />
       <Button onPress={filterJobs} style={{flex:1}} title="Seach jobs"></Button>
-      </View>
+      </View> */}
       <FlatList
         data={jobs}
         keyExtractor={(item, index) => index.toString()}
